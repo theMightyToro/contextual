@@ -17,8 +17,23 @@
 			$currentUrl = $protocol . '://' . $host . $script . '?' . $params;
 
 			//Sets contextual image with an if/else statement
-			$contextual = strpos($_SERVER['SCRIPT_NAME'],'home') 
-			  === FALSE ? 'context1.png' : 'context2.png';
+			//$contextual = strpos($_SERVER['SCRIPT_NAME'],'home') 
+			// === FALSE ? 'context1.png' : 'context2.png';
+
+			//Sets contextual image using parameter in URL
+			switch ($params) {
+				case "one":
+					$contextual = "context1.png";
+				break;
+				case "two":
+					$contextual = "context2.png";
+				break;
+				case "three": 
+					$contextual = "context3.png";
+				break;
+				default:
+					$contextual = "";
+			}
 		?> 
 	</head>
 	<body>
@@ -29,8 +44,11 @@
 		</div>
 		<div class="container-content">
 			<article class="content">
-				<img src="<?php echo $contextual; ?>" alt="context" class="contextual"/>
-
+				<?php
+					if($contextual != "")  {
+						echo '<img src="' . $contextual . '" alt="context" class="contextual"/>';
+					}	
+				?>
 				<p><strong>Protocol:</strong> <?php echo $protocol; ?></p>
 				<p><strong>Host:</strong> <?php echo $host; ?></p>
 				<p><strong>Script:</strong> <?php echo $script; ?></p>
