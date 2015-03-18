@@ -43,6 +43,10 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 15px;
 }
+.contextual {
+	float:right;
+	padding: 0 0 10px 10px;
+}
 .container-footer {
 	clear:both;	
 	
