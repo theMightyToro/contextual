@@ -6,7 +6,7 @@
 		<?php include("parseURL.php");?> 
 		<?php include("contextual.php");?> 
 	</head>
-	<body>
+	<body class="<?php echo $page; ?> <?php echo $section; ?>">
 		<div class="container-header">
 			<header class="header-page">
 				<div class="brand">Contextual Test Site</div>
@@ -16,15 +16,15 @@
 			<article class="content">
 				<?php
 					if($contextual != "")  {
-						echo '<img src="' . $contextual . '" alt="' . $contextualAlt . '" class="contextual"/>';
+						echo '<img src="' . $contextual . '" alt="' . $contextualAlt . '" class="context"/>';
 					}	
 				?>
-				<p><strong>Protocol:</strong> <?php echo $protocol; ?></p>
-				<p><strong>Host:</strong> <?php echo $host; ?></p>
-				<p><strong>Script:</strong> <?php echo $script; ?></p>
+				<!--<p><strong>Protocol:</strong> <?php echo $protocol; ?></p>-->
+				<!--<p><strong>Host:</strong> <?php echo $host; ?></p>-->
+				<!--<p><strong>Script:</strong> <?php echo $script; ?></p>-->
 				<p><strong>Params:</strong> <?php echo $params; ?></p> 
-				<p><strong>Full URL:</strong> <?php echo $currentUrl; ?></p>
-				<p><strong>Parsed URL:</strong> <?php print_r(parse_url($currentUrl)); ?> </p>
+				<p><strong>Full URL:</strong> <?php echo $url; ?></p>
+				<!--<p><strong>Parsed URL:</strong> <?php print_r(parse_url($url)); ?> </p>-->
 
 				<p>Page: <?php echo $page; ?></p>
 				<p>Section: <?php echo $section; ?></p>
